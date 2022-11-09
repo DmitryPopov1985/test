@@ -1,17 +1,8 @@
 import showUserHealth from '../health';
 
-test('showUserHealth', () => {
-  const user1 = { name: 'Маг', health: 90 };
-  const result = showUserHealth(user1);
-  expect(result).toBe('healthy');
-});
-test('showUserHealth', () => {
-  const user2 = { name: 'Воин', health: 40 };
-  const result = showUserHealth(user2);
-  expect(result).toBe('wounded');
-});
-test('showUserHealth', () => {
-  const user3 = { name: 'Лучник', health: 13 };
-  const result = showUserHealth(user3);
-  expect(result).toBe('critical');
+test('show userHealth', () => {
+  expect(showUserHealth({ name: 'Маг', health: 100 })).toBe('healthy');
+  expect(showUserHealth({ name: 'Воин', health: 50 })).toBe('wounded');
+  expect(showUserHealth({ name: 'Лучник', health: 14 })).toBe('critical');
+  expect(showUserHealth({ name: 'Маг', health: 70 })).toBe('healthy');
 });

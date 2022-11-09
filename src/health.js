@@ -1,8 +1,12 @@
-export default function showUserHealth(user) {
-  if (user.health > 50) {
+export default function showUserHealth({ health }) {
+  if (health > 50) {
     return 'healthy';
-  } if (user.health > 15) {
+  } if (health > 15) {
     return 'wounded';
   }
   return 'critical';
+}
+
+export function sortByHealth(heroes) {
+  return heroes.sort((a, b) => (a.health < b.health ? 1 : -1));
 }
